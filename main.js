@@ -20,14 +20,18 @@ const ListItem = (props) => {
 };
 
 const List = () => {
+  const itemList = [
+    { title: "タイトル1", text: "テキスト1" },
+    { title: "タイトル2", text: "テキスト2" },
+    { title: "タイトル3", text: "テキスト3" },
+    { title: "タイトル4", text: "テキスト4" },
+    { title: "タイトル5", text: "テキスト5" },
+    { title: "タイトル6", text: "テキスト6" },
+  ];
+
   return `
   <ul class="list">
-    ${ListItem({ title: "タイトル1", text: "テキスト1" })}
-    ${ListItem({ title: "タイトル2", text: "テキスト2" })}
-    ${ListItem({ title: "タイトル3", text: "テキスト3" })}
-    ${ListItem({ title: "タイトル4", text: "テキスト4" })}
-    ${ListItem({ title: "タイトル5", text: "テキスト5" })}
-    ${ListItem({ title: "タイトル6", text: "テキスト6" })}
+    ${itemList.map((item) => ListItem(item)).join("")}
   </ul>
   `;
 };
