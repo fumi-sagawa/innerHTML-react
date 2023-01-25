@@ -9,11 +9,12 @@ const Title = () => {
   `;
 };
 
-const ListItem = () => {
+// propps : {title: string, text: string}
+const ListItem = (props) => {
   return `
   <li>
-    <h2>見出し</h2>
-    <p>サンプルテキストサンプルテキストサンプルテキスト</p>
+    <h2>${props.title}</h2>
+    <p>${props.text}</p>
   </li>
   `;
 };
@@ -21,12 +22,12 @@ const ListItem = () => {
 const List = () => {
   return `
   <ul class="list">
-    ${ListItem()}
-    ${ListItem()}
-    ${ListItem()}
-    ${ListItem()}
-    ${ListItem()}
-    ${ListItem()}
+    ${ListItem({ title: "タイトル1", text: "テキスト1" })}
+    ${ListItem({ title: "タイトル2", text: "テキスト2" })}
+    ${ListItem({ title: "タイトル3", text: "テキスト3" })}
+    ${ListItem({ title: "タイトル4", text: "テキスト4" })}
+    ${ListItem({ title: "タイトル5", text: "テキスト5" })}
+    ${ListItem({ title: "タイトル6", text: "テキスト6" })}
   </ul>
   `;
 };
