@@ -21,6 +21,9 @@ const ListItem = (props: { title: string; text: string }) => {
 const List = () => {
   //itemListをフィルタリングするかどうかのフラグ
   const [filterlingFlag, setFilterlingFlag] = useState(true);
+  const toggleFilterlingFlag = () => {
+    setFilterlingFlag((prevState) => !prevState);
+  };
 
   const itemList = [
     { title: "タイトル1", text: "テキスト1", flag: true },
@@ -39,7 +42,9 @@ const List = () => {
   return (
     <>
       <ul className="list">{filteredItemList.map((item) => ListItem(item))}</ul>
-      <span>{filterlingFlag ? "true" : "false"}</span>
+      <button onClick={toggleFilterlingFlag}>
+        {filterlingFlag ? "true" : "false"}
+      </button>
     </>
   );
 };
