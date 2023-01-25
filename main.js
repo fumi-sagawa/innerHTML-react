@@ -21,18 +21,27 @@ const ListItem = (props) => {
 
 const List = () => {
   const itemList = [
-    { title: "タイトル1", text: "テキスト1" },
-    { title: "タイトル2", text: "テキスト2" },
-    { title: "タイトル3", text: "テキスト3" },
-    { title: "タイトル4", text: "テキスト4" },
-    { title: "タイトル5", text: "テキスト5" },
-    { title: "タイトル6", text: "テキスト6" },
+    { title: "タイトル1", text: "テキスト1", flag: true },
+    { title: "タイトル2", text: "テキスト2", flag: false },
+    { title: "タイトル3", text: "テキスト3", flag: true },
+    { title: "タイトル4", text: "テキスト4", flag: false },
+    { title: "タイトル5", text: "テキスト5", flag: true },
+    { title: "タイトル6", text: "テキスト6", flag: false },
   ];
+
+  //itemListをフィルタリングするかどうかのフラグ
+  const filterlingFlag = true;
+
+  //flagによってフィルタリングする
+  const filteredItemList = itemList.filter((item) => {
+    return item.flag === filterlingFlag;
+  });
 
   return `
   <ul class="list">
-    ${itemList.map((item) => ListItem(item)).join("")}
+    ${filteredItemList.map((item) => ListItem(item)).join("")}
   </ul>
+  <span>${filterlingFlag ? "true" : "false"}<span>
   `;
 };
 
