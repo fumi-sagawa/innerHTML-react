@@ -5,36 +5,28 @@ const target = document.getElementById("app");
 const Title = () => {
   return `
     <h1>element.innerHTMLとテンプレートリテラルで掴むReactの動き方</h1>
+    <p>こんにちは世界。</p>
+  `;
+};
+
+const ListItem = () => {
+  return `
+  <li>
+    <h2>見出し</h2>
+    <p>サンプルテキストサンプルテキストサンプルテキスト</p>
+  </li>
   `;
 };
 
 const List = () => {
   return `
   <ul class="list">
-    <li class="listItem">
-      <h2>見出し</h2>
-      <p>サンプルテキストサンプルテキストサンプルテキスト</p>
-    </li>
-    <li>
-      <h2>見出し</h2>
-      <p>サンプルテキストサンプルテキストサンプルテキスト</p>
-    </li>
-    <li>
-      <h2>見出し</h2>
-      <p>サンプルテキストサンプルテキストサンプルテキスト</p>
-    </li>
-    <li>
-      <h2>見出し</h2>
-      <p>サンプルテキストサンプルテキストサンプルテキスト</p>
-    </li>
-    <li>
-      <h2>見出し</h2>
-      <p>サンプルテキストサンプルテキストサンプルテキスト</p>
-    </li>
-    <li>
-      <h2>見出し</h2>
-      <p>サンプルテキストサンプルテキストサンプルテキスト</p>
-    </li>
+    ${ListItem()}
+    ${ListItem()}
+    ${ListItem()}
+    ${ListItem()}
+    ${ListItem()}
+    ${ListItem()}
   </ul>
   `;
 };
